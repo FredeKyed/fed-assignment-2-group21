@@ -46,13 +46,23 @@ export default function LoginPage() {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>Login</h2>
+      <h2 style={{ borderBottom: "2px solid #007bff", paddingBottom: "0.5rem" }}>
+        Login
+      </h2>
       {loginError && (
         <p style={{ color: "red", marginBottom: "1rem" }}>{loginError}</p>
       )}
       <form onSubmit={handleLogin}>
         <div>
           <input
+          style={{
+            padding: "0.5rem",
+            width: "100%",
+            maxWidth: "400px",
+            marginBottom: "0.5rem",
+            border: "1px solid #ccc",
+            borderRadius: "4px"
+          }}
             type="email"
             placeholder="Email"
             value={form.email}
@@ -62,6 +72,14 @@ export default function LoginPage() {
         </div>
         <div>
           <input
+          style={{
+            padding: "0.5rem",
+            width: "100%",
+            maxWidth: "400px",
+            marginBottom: "0.5rem",
+            border: "1px solid #ccc",
+            borderRadius: "4px"
+          }}
             type="password"
             placeholder="Password"
             value={form.password}
@@ -69,7 +87,17 @@ export default function LoginPage() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button
+        style={{
+          padding: "0.5rem 1rem",
+          marginTop: "0.5rem",
+          border: "none",
+          backgroundColor: "#007bff",
+          color: "white",
+          borderRadius: "4px",
+          cursor: "pointer"
+        }}
+        type="submit">Login</button>
       </form>
     </div>
   );

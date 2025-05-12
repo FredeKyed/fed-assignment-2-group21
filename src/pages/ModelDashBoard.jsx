@@ -114,17 +114,35 @@ async function fetchExpenses() {
 
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div style={{ 
+      padding: "2rem",
+      maxWidth: "800px",
+      margin: "2rem auto",
+      border: "1px solid #ccc",
+      borderRadius: "8px",
+      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+      backgroundColor: "grey"
+      }}>
       <button
+        style={{
+                padding: "0.5rem 1rem",
+                marginTop: "0.5rem",
+                border: "none",
+                backgroundColor: "#007bff",
+                color: "white",
+                borderRadius: "4px",
+                cursor: "pointer"
+              }}
         onClick={() => {
           localStorage.removeItem("token");
           navigate("/");
         }}
-        style={{ position: "absolute", top: "1rem", right: "1rem" }}
         >
           Log ud
         </button>
-      <h2>Model Dashboard</h2>
+      <h2 style={{ borderBottom: "2px solid #007bff", paddingBottom: "0.5rem" }}>
+        Model Dashboard
+      </h2>
       {modelEmail && <p>Logget ind som: <strong>{modelEmail}</strong></p>}
       <h3>Dine jobs:</h3>
       <ul>
@@ -143,7 +161,15 @@ async function fetchExpenses() {
                     {e.text} — {e.amount} kr.
                     <button
                       onClick={() => deleteExpense(e.expenseId)}
-                      style={{ marginLeft: "0.5rem", color: "red" }}
+                      style={{
+                        padding: "0.5rem 1rem",
+                        marginTop: "0.5rem",
+                        border: "none",
+                        backgroundColor: "red",
+                        color: "white",
+                        borderRadius: "4px",
+                        cursor: "pointer"
+                      }}
                     >
                       Fjern
                     </button>
@@ -191,7 +217,18 @@ async function fetchExpenses() {
                 }
                 style={{ marginLeft: "0.5rem" }}
               />
-              <button onClick={() => addExpense(job.jobId)} style={{ marginLeft: "0.5rem" }}>
+              <button 
+              style={{
+                padding: "0.5rem 1rem",
+                marginTop: "0.5rem",
+                border: "none",
+                backgroundColor: "#007bff",
+                color: "white",
+                borderRadius: "4px",
+                cursor: "pointer"
+              }}
+              onClick={() => addExpense(job.jobId)} 
+              >
                 Tilføj udgift
               </button>
             </div>

@@ -206,21 +206,48 @@ export default function ManagerDashboard() {
   
 
   return (
-    <div style={{ padding: "2rem" }}>
+    <div style={{ 
+      padding: "2rem",
+      maxWidth: "800px",
+      margin: "2rem auto",
+      border: "1px solid #ccc",
+      borderRadius: "8px",
+      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+      backgroundColor: "grey"
+      }}>
       <button
+        style={{
+          padding: "0.5rem 1rem",
+          marginTop: "0.5rem",
+          border: "none",
+          backgroundColor: "#007bff",
+          color: "white",
+          borderRadius: "4px",
+          cursor: "pointer"
+        }}
         onClick={() => {
           localStorage.removeItem("token");
           navigate("/");
         }}
-        style={{ position: "absolute", top: "1rem", right: "1rem" }}
         >
           Log ud
         </button>
-      <h2>Manager Dashboard</h2>
+      <h2 style={{ borderBottom: "2px solid #007bff", paddingBottom: "0.5rem" }}>
+        Manager Dashboard
+      </h2>
 
       <h3>Opret ny manager:</h3>
-      <form onSubmit={createManager} style={{ marginBottom: "2rem" }}>
+      <form onSubmit={createManager} 
+      style={{ marginBottom: "2rem" }}>
         <input
+            style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
             type="text"
             placeholder="Fornavn"
             value={newManager.firstName}
@@ -231,6 +258,14 @@ export default function ManagerDashboard() {
             />
             <br />
             <input
+              style={{
+                padding: "0.5rem",
+                width: "100%",
+                maxWidth: "400px",
+                marginBottom: "0.5rem",
+                border: "1px solid #ccc",
+                borderRadius: "4px"
+              }}
             type="text"
             placeholder="Efternavn"
             value={newManager.lastName}
@@ -241,6 +276,14 @@ export default function ManagerDashboard() {
           />
           <br />
           <input
+            style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
             type="email"
             placeholder="Email"
             value={newManager.email}
@@ -251,6 +294,14 @@ export default function ManagerDashboard() {
           />
           <br />
           <input
+            style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
             type="password"
             placeholder="Adgangskode"
             value={newManager.password}
@@ -260,68 +311,249 @@ export default function ManagerDashboard() {
             required
           />
           <br />
-          <button type="submit">Opret manager</button>
+          <button 
+          style={{
+            padding: "0.5rem 1rem",
+            marginTop: "0.5rem",
+            border: "none",
+            backgroundColor: "#007bff",
+            color: "white",
+            borderRadius: "4px",
+            cursor: "pointer"
+          }}
+          type="submit">Opret manager</button>
       </form>
 
       <h3>Opret ny model:</h3>
       <form onSubmit={createModel} style={{ marginBottom: "2rem" }}>
-        <input placeholder="Fornavn" value={newModel.firstName}
+        <input 
+          style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Fornavn" value={newModel.firstName}
             onChange={(e) => setNewModel({ ...newModel, firstName: e.target.value })} required /><br />
 
-        <input placeholder="Efternavn" value={newModel.lastName}
+        <input 
+          style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Efternavn" value={newModel.lastName}
             onChange={(e) => setNewModel({ ...newModel, lastName: e.target.value })} required /><br />
 
-        <input type="email" placeholder="Email" value={newModel.email}
+        <input 
+          style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        type="email" placeholder="Email" value={newModel.email}
             onChange={(e) => setNewModel({ ...newModel, email: e.target.value })} required /><br />
 
-        <input placeholder="Telefon" value={newModel.phoneNo}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Telefon" value={newModel.phoneNo}
             onChange={(e) => setNewModel({ ...newModel, phoneNo: e.target.value })} /><br />
 
-        <input placeholder="Adresse 1" value={newModel.addressLine1}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Adresse 1" value={newModel.addressLine1}
             onChange={(e) => setNewModel({ ...newModel, addressLine1: e.target.value })} /><br />
 
-        <input placeholder="Adresse 2" value={newModel.addressLine2}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Adresse 2" value={newModel.addressLine2}
             onChange={(e) => setNewModel({ ...newModel, addressLine2: e.target.value })} /><br />
 
-        <input placeholder="Postnummer" value={newModel.zip}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Postnummer" value={newModel.zip}
             onChange={(e) => setNewModel({ ...newModel, zip: e.target.value })} /><br />
 
-        <input placeholder="By" value={newModel.city}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="By" value={newModel.city}
             onChange={(e) => setNewModel({ ...newModel, city: e.target.value })} /><br />
 
-        <input placeholder="Land" value={newModel.country}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Land" value={newModel.country}
             onChange={(e) => setNewModel({ ...newModel, country: e.target.value })} /><br />
 
-        <input type="date" value={newModel.birthDate}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        type="date" value={newModel.birthDate}
             onChange={(e) => setNewModel({ ...newModel, birthDate: e.target.value })} required /><br />
 
-        <input placeholder="Nationalitet" value={newModel.nationality}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Nationalitet" value={newModel.nationality}
             onChange={(e) => setNewModel({ ...newModel, nationality: e.target.value })} /><br />
 
-        <input placeholder="Højde" value={newModel.height}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Højde" value={newModel.height}
             onChange={(e) => setNewModel({ ...newModel, height: e.target.value })} /><br />
 
-        <input placeholder="Skostørrelse" value={newModel.shoeSize}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Skostørrelse" value={newModel.shoeSize}
             onChange={(e) => setNewModel({ ...newModel, shoeSize: e.target.value })} /><br />
 
-        <input placeholder="Hårfarve" value={newModel.hairColor}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Hårfarve" value={newModel.hairColor}
             onChange={(e) => setNewModel({ ...newModel, hairColor: e.target.value })} /><br />
 
-        <input placeholder="Øjenfarve" value={newModel.eyeColor}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Øjenfarve" value={newModel.eyeColor}
             onChange={(e) => setNewModel({ ...newModel, eyeColor: e.target.value })} /><br />
 
-        <textarea placeholder="Kommentar" value={newModel.comments}
+        <textarea 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        placeholder="Kommentar" value={newModel.comments}
             onChange={(e) => setNewModel({ ...newModel, comments: e.target.value })} /><br />
 
-        <input type="password" placeholder="Adgangskode" value={newModel.password}
+        <input 
+        style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
+        type="password" placeholder="Adgangskode" value={newModel.password}
             onChange={(e) => setNewModel({ ...newModel, password: e.target.value })} required /><br />
 
-        <button type="submit">Opret model</button>
+        <button 
+        style={{
+          padding: "0.5rem 1rem",
+          marginTop: "0.5rem",
+          border: "none",
+          backgroundColor: "#007bff",
+          color: "white",
+          borderRadius: "4px",
+          cursor: "pointer"
+        }}
+        type="submit">Opret model</button>
       </form>
 
       <h3>Opret nyt job:</h3>
         <form onSubmit={createJob} style={{ marginBottom: "1rem" }}>
               <input
+              style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
               type="text"
                placeholder="Kunde"
               value={newJob.customer || ""}
@@ -330,6 +562,14 @@ export default function ManagerDashboard() {
              />
              <br />
              <input
+             style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
               type="date"
               value={newJob.startDate}
               onChange={(e) => setNewJob({ ...newJob, startDate: e.target.value })}
@@ -337,6 +577,14 @@ export default function ManagerDashboard() {
              />
              <br />
              <input
+             style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
                type="number"
                min="1"
                placeholder="Antal dage"
@@ -346,6 +594,14 @@ export default function ManagerDashboard() {
              />
              <br />
              <input
+             style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
               type="text"
               placeholder="Lokation"
               value={newJob.location}
@@ -354,12 +610,30 @@ export default function ManagerDashboard() {
              />
              <br />
               <textarea
+              style={{
+              padding: "0.5rem",
+              width: "100%",
+              maxWidth: "400px",
+              marginBottom: "0.5rem",
+              border: "1px solid #ccc",
+              borderRadius: "4px"
+            }}
               placeholder="Kommentar"
               value={newJob.comments}
                onChange={(e) => setNewJob({ ...newJob, comments: e.target.value })}
               />
              <br />
-            <button type="submit">Opret job</button>
+            <button 
+            style={{
+              padding: "0.5rem 1rem",
+              marginTop: "0.5rem",
+              border: "none",
+              backgroundColor: "#007bff",
+              color: "white",
+              borderRadius: "4px",
+              cursor: "pointer"
+            }}
+            type="submit">Opret job</button>
         </form>
 
 
@@ -383,14 +657,32 @@ export default function ManagerDashboard() {
                     </option>
                 ))}
             </select>
-            <button onClick={() => addModelToJob(job.jobId)}>Tilføj model</button>
+            <button 
+            style={{
+              padding: "0.5rem 1rem",
+              marginTop: "0.5rem",
+              border: "none",
+              backgroundColor: "#007bff",
+              color: "white",
+              borderRadius: "4px",
+              cursor: "pointer"
+            }}
+            onClick={() => addModelToJob(job.jobId)}>Tilføj model</button>
             {job.models && job.models.length > 0 && (
                 <ul>
                     {job.models.map((model) => (
                         <li key={model.modelId}>- {model.firstName} {model.lastName}
                         <button
                         onClick={() => removeModelFromJob(job.jobId, model.modelId)}
-                        style={{ marginLeft: "0.5rem" }}
+                        style={{
+                          padding: "0.5rem 1rem",
+                          marginTop: "0.5rem",
+                          border: "none",
+                          backgroundColor: "red",
+                          color: "white",
+                          borderRadius: "4px",
+                          cursor: "pointer"
+                        }}
                         >
                             Fjern
                         </button>
