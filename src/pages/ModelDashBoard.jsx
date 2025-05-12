@@ -189,6 +189,14 @@ async function fetchExpenses() {
             {/* Tilføj ny udgift */}
             <div style={{ marginTop: "0.5rem" }}>
               <input
+                style={{
+                  padding: "0.5rem",
+                  width: "100%",
+                  maxWidth: "400px",
+                  marginBottom: "0.5rem",
+                  border: "1px solid #ccc",
+                  borderRadius: "4px"
+                }}
                 type="text"
                 placeholder="Beskrivelse"
                 value={newExpenses[job.jobId]?.text || ""}
@@ -203,6 +211,14 @@ async function fetchExpenses() {
                 }
               />
               <input
+                style={{
+                  padding: "0.5rem",
+                  width: "100%",
+                  maxWidth: "400px",
+                  marginBottom: "0.5rem",
+                  border: "1px solid #ccc",
+                  borderRadius: "4px"
+                }}
                 type="number"
                 placeholder="Beløb"
                 value={newExpenses[job.jobId]?.amount || ""}
@@ -215,7 +231,6 @@ async function fetchExpenses() {
                     }
                   })
                 }
-                style={{ marginLeft: "0.5rem" }}
               />
               <button 
               style={{
